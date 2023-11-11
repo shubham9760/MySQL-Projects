@@ -170,3 +170,43 @@ WITH CTE1 AS
 SELECT channel, SUM(gross_sales_mln) as gross_sales_mln
 	FROM CTE1
     GROUP BY channel;
+
+#10th
+#Get the Top 3 products in each division that have a high total sold quantity in the fiscal year 2021. 
+#The final output contains these, fields, division, product code, product, total sold quantity, and rank order.
+
+WITH CTE AS 
+(	
+	SELECT dp.division, dp.product_code, dp.product, SUM(sm.sold_quantity) AS total_sold_quantity, sm.fiscal_year
+    FROM dim_product dp
+    JOIN fact_sales_monthly sm
+    ON dp.product_code = sm.product_code
+    WHERE sm.fiscal_year = 2021
+    GROUP BY dp.division, dp.product_code, dp.product
+    ORDER BY total_sold_quantity DESC
+)
+SELECT * FROM 
+(SELECT division, product_code, product, total_sold_quantity,
+rank() OVER(PARTITION BY division ORDER BY total_sold_quantity DESC) AS rank_order  
+FROM CTE) x
+WHERE rank_order < 4;
+
+
+
+#11: Write the function to get the fiscal year quarter for the given data set.
+
+CREATE FUNCTION `get_fiscal_quater` (calender_date DATE)
+RETURNS CHAR(2)
+DETERMINISTIC
+BEGIN
+	DECLARE m TINYINT;
+    	DECLARE qtr CHAR(2);
+    	SET m = MONTH(calender_date);
+CASE
+WHEN m IN (9, 10, 11) THEN SET qtr="Q1";
+    	WHEN m IN (12, 1, 2) THEN SET qtr="Q2";
+   	WHEN m IN (3, 4, 5) THEN SET qtr="Q3";
+    	WHEN m IN (6, 7, 8) THEN SET qtr="Q4";
+END CASE;
+RETURN qtr;
+END
