@@ -1,2 +1,2 @@
 Hello 
-In this repository, I will be uploading all the projects I have done using MySQL workbench.
+This repository contains a collection of SQL projects designed to showcase various SQL skills and techniques. Each project includes a detailed description of the problem statement, the SQL scripts used to solve the problem, and the results obtained.
