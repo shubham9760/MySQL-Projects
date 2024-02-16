@@ -1,1 +1,33 @@
+Project Overview:
+The project aims to analyze sales data from a fictional database (gdb023) to derive valuable insights and metrics for business decision-making. By leveraging SQL queries, we delve into various aspects such as market analysis, product segmentation, customer behavior, and sales performance. The analysis focuses on understanding trends, identifying key growth opportunities, and optimizing strategies to enhance business performance.
 
+Objectives:
+Identify markets where the customer "Atliq Exclusive" operates within the APAC region.
+Calculate the percentage increase in unique product counts from 2020 to 2021.
+Determine the unique product counts for each segment and rank them in descending order.
+Analyze the segment with the highest increase in unique products between 2020 and 2021.
+Identify products with the highest and lowest manufacturing costs.
+Generate a report on the top 5 customers with the highest average pre-invoice discount percentage in 2021 in the Indian market.
+Obtain a complete report of gross sales amounts for the customer "Atliq Exclusive" on a monthly basis.
+Determine the quarter of 2020 with the maximum total sold quantity.
+Analyze the contribution of different channels to gross sales in the fiscal year 2021.
+Identify the top 3 products in each division with the highest total sold quantity in fiscal year 2021.
+
+
+Methodologies:
+Utilize SQL queries to extract and manipulate data from the gdb023 database.
+Employ aggregation, filtering, and sorting techniques to perform analysis.
+Utilize Common Table Expressions (CTEs) and Window Functions for complex queries and ranking.
+Generate reports to present findings and insights.
+Technologies Used:
+SQL (Structured Query Language) for data querying and analysis.
+Database Management System (DBMS) for storing and managing the database.
+
+
+Potential Outcomes:
+Identification of key markets for strategic business expansion.
+Insights into product segmentation and performance across different segments.
+Understanding of customer behavior and preferences, facilitating targeted marketing efforts.
+Optimization of manufacturing processes based on product cost analysis.
+Enhanced decision-making through comprehensive sales reports and metrics.
+Identification of high-performing products and channels for further investment and focus.
